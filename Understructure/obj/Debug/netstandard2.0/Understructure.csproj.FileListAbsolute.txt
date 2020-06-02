@@ -1,0 +1,12 @@
+C:\Github\Ikkyo\Understructure\bin\Debug\netstandard2.0\Understructure.deps.json
+C:\Github\Ikkyo\Understructure\bin\Debug\netstandard2.0\Understructure.dll
+C:\Github\Ikkyo\Understructure\bin\Debug\netstandard2.0\Understructure.pdb
+C:\Github\Ikkyo\Understructure\bin\Debug\netstandard2.0\Domain.dll
+C:\Github\Ikkyo\Understructure\bin\Debug\netstandard2.0\Domain.pdb
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.csprojAssemblyReference.cache
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.csproj.CoreCompileInputs.cache
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.AssemblyInfoInputs.cache
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.AssemblyInfo.cs
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.csproj.CopyComplete
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.dll
+C:\Github\Ikkyo\Understructure\obj\Debug\netstandard2.0\Understructure.pdb
