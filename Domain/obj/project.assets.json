@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "c:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-      "outputPath": "c:\\Github\\Ikkyo\\Domain\\obj\\",
+      "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

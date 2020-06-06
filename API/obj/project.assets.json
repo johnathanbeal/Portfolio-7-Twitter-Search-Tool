@@ -596,11 +596,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\Ikkyo\\API\\API.csproj",
+      "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Github\\Ikkyo\\API\\API.csproj",
+      "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj",
       "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\Ikkyo\\API\\obj\\",
+      "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -623,8 +623,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj": {
-              "projectPath": "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj"
+            "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj": {
+              "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj"
             }
           }
         }

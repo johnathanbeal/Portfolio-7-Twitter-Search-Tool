@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VS+SIyg54p7vL+W8NwqSGqgICDnm/fdKkfqtV+adXhTZSNG4iT7hQKRhsCxvJaqtQHFKchiw98WACF8qmv0k8w==",
+  "dgSpecHash": "GGqFyxpMPm1ZAlEzwbz2fuphkYhGM7YGLU+eKBgv9L2Z4PDCi+zrQfmH7ZX0BDfyFADPH0U3L2H+HTG7fyuJYw==",
   "success": true,
-  "projectFilePath": "C:\\Github\\Ikkyo\\API\\API.csproj",
+  "projectFilePath": "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jbeal\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.3\\microsoft.aspnetcore.nodeservices.3.1.3.nupkg.sha512",
     "C:\\Users\\jbeal\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.3\\microsoft.aspnetcore.spaservices.3.1.3.nupkg.sha512",

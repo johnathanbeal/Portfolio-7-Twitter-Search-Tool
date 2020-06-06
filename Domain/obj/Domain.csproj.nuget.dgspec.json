@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\Ikkyo\\Domain\\Domain.csproj": {}
+    "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Github\\Ikkyo\\Domain\\Domain.csproj": {
+    "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\Ikkyo\\Domain\\obj\\",
+        "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

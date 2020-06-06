@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SGaUmUeKFnL4yZ6+crFtelG7uhFIiu/rM7y6LOLmvRfE0b+jbQ69iQRkDgATRXXPlIAPZamvqtA3plaVjchN7Q==",
+  "dgSpecHash": "1JshifqPq6PAXmLZkD6Mpa5nOAFtZoHyP9D0WwI3hoXzHpeJb2Gf0/rTb6/Ca5krUW0+AeiOPE8UrVXvQwx01A==",
   "success": true,
-  "projectFilePath": "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj",
+  "projectFilePath": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

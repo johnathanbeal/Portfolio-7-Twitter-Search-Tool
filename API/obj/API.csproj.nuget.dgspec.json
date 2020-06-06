@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\Ikkyo\\API\\API.csproj": {}
+    "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Github\\Ikkyo\\API\\API.csproj": {
+    "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Ikkyo\\API\\API.csproj",
+        "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Github\\Ikkyo\\API\\API.csproj",
+        "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\API\\API.csproj",
         "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\Ikkyo\\API\\obj\\",
+        "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -34,8 +34,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj": {
-                "projectPath": "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj"
+              "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj": {
+                "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Github\\Ikkyo\\Domain\\Domain.csproj": {
+    "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Github\\Ikkyo\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\Ikkyo\\Domain\\obj\\",
+        "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -142,14 +142,14 @@
         }
       }
     },
-    "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj": {
+    "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj",
+        "projectUniqueName": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj",
         "projectName": "Understructure",
-        "projectPath": "C:\\Github\\Ikkyo\\Understructure\\Understructure.csproj",
+        "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\Understructure.csproj",
         "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\Ikkyo\\Understructure\\obj\\",
+        "outputPath": "C:\\Github\\Ikkyo\\Ikkyo\\Understructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -172,8 +172,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Github\\Ikkyo\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Github\\Ikkyo\\Domain\\Domain.csproj"
+              "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj"
               }
             }
           }
