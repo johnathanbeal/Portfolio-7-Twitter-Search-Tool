@@ -10,15 +10,17 @@
     <form>
         <label for="search">Search</label>
         <input type="text" id="search" name="search" />
-        <br />        
-        <input type="submit" value="Submit" />
+        <br />
+        <button onclick="getTweets()" id="submit" type="submit" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;" >Submit</button>
     </form>
     <table>
-        <tr>
-        <thead></thead>
-        <thead></thead>
-        <thead></thead>
-        </tr>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>screen name</th>
+                <th>text</th>
+            </tr>
+        </thead>
         <tr>
             <td></td>
             <td></td>
