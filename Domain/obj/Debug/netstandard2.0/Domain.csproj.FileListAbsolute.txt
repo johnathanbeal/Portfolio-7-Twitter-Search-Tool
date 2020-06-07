@@ -15,3 +15,4 @@ C:\Github\Ikkyo\Ikkyo\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.
 C:\Github\Ikkyo\Ikkyo\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
 C:\Github\Ikkyo\Ikkyo\Domain\obj\Debug\netstandard2.0\Domain.dll
 C:\Github\Ikkyo\Ikkyo\Domain\obj\Debug\netstandard2.0\Domain.pdb
+C:\Github\Ikkyo\Ikkyo\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
