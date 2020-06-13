@@ -12,13 +12,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SpaServices;
 using Microsoft.AspNetCore.Routing.Matching;
-using API.AuthInfo;
 
 namespace API
 {
     public class Startup
     {
-        public AuthInfo.AuthInfo TwitterTokenAuthInfo;
+        //public AuthInfo.AuthInfo TwitterTokenAuthInfo;
 
         public Startup(IConfiguration configuration)
         {
@@ -30,10 +29,9 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var twitterUsername = Configuration["Twitter:Username"];
-            var twitterPassword = Configuration["Twitter:Password"];
+            
 
-            TwitterTokenAuthInfo = new AuthInfo.AuthInfo(twitterUsername, twitterPassword);
+            //TwitterTokenAuthInfo = new AuthInfo.AuthInfo(twitterUsername, twitterPassword);
             services.AddControllers();
             //services.AddSpaStaticFiles(SpaStaticFilesOptions =>
             //{

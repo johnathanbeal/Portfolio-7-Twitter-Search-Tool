@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace API.AuthInfo
+namespace API.AuthorizationInfo
 {
 	public class AuthInfo
 	{
-		public string TwitterUsername { get; set; }
-		public string TwitterPassword { get; set; }
+		public static string TwitterUsername { get; set; }
+		public static string TwitterPassword { get; set; }
 
 		public AuthInfo(string _twitterUsername, string _twitterPassword)
 		{
