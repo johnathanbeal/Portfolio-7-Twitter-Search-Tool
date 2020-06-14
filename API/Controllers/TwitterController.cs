@@ -86,7 +86,7 @@ namespace API.Controllers
 
                 AuthController authCon = new AuthController(Configuration);
 
-                client.BaseAddress = new Uri("");
+                client.BaseAddress = new Uri(_base);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await authCon.BearerToken(twitterUsername, twitterPassword));

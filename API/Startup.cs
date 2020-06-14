@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SpaServices;
 using Microsoft.AspNetCore.Routing.Matching;
+using Microsoft.VisualBasic.FileIO;
+using API.Controllers;
 
 namespace API
 {
@@ -40,9 +42,12 @@ namespace API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();
+            TwitterController twitter = new TwitterController(Configuration);
+            await twitter.GetTweets();
+
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();

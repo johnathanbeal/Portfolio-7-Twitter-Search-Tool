@@ -157,6 +157,4 @@ C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Work
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Github\Ikkyo\Ikkyo\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
-C:\Github\Ikkyo\Ikkyo\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
-C:\Github\Ikkyo\Ikkyo\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\RestSharp.dll
