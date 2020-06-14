@@ -89,7 +89,7 @@ namespace API.Controllers
                 client.BaseAddress = new Uri(_base);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await authCon.BearerToken(twitterUsername, twitterPassword));
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authCon.BearerToken(twitterUsername, twitterPassword));
 
                 var response = await client.GetAsync(url).ConfigureAwait(false);
 
