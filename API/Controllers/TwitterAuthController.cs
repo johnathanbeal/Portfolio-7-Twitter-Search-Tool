@@ -23,6 +23,8 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System.Reflection.Metadata;
 using System.Web;
+using RestSharp.Serialization.Json;
+using Newtonsoft.Json.Linq;
 
 namespace API.Controllers
 {
@@ -64,28 +66,28 @@ namespace API.Controllers
             //declare secret/password
             string password = _password;
 
-            //concatenate key and secret with a ':' in between
-            var twitterCredentials = username + ":" + password;
-
-            //Convert to Base 64
-            var base64Creds = Convert.ToBase64String(Encoding.UTF8.GetBytes(twitterCredentials));
-
-            //var client = new RestClient();
             var client = new RestClient(baseURI);
-            //client.Authenticator = new SimpleAuthenticator("username", username, "password", password);
             client.Authenticator = new HttpBasicAuthenticator(username, password);
 
             var request = new RestRequest(baseURI, Method.POST);
 
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-            //request.AddHeader("Authorization", $"Bearer {base64Creds}");
             request.AddParameter("grant_type", grant_type);
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Accept", "application/json");
             
             IRestResponse response = client.Execute(request);
 
-            return "";
+            var statusCode = response.StatusCode;
+            var debug = response.ResponseStatus;
+            var debug2 = response.Content;
+            dynamic jsonResponse = JObject.Parse(response.Content);
+            var bearerToken = jsonResponse.access_token;
+            var token_type = jsonResponse.token_type;
+                
+
+
+            return bearerToken;
         }
 
         public async Task<String> WastedTime(string _username, string _password)
