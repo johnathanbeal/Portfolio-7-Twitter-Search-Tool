@@ -84,7 +84,7 @@ namespace API.Controllers
                 string url = String.Format(_base);
                 Console.WriteLine("\nThe URI is ${url}");
 
-                AuthController authCon = new AuthController(Configuration);
+                TwitterAuthController authCon = new TwitterAuthController(Configuration);
 
                 client.BaseAddress = new Uri(_base);
                 client.DefaultRequestHeaders.Accept.Clear();
