@@ -28,7 +28,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SpaServices;
 using Microsoft.AspNetCore.Routing.Matching;
-
+using RestSharp;
+using API.Extensions;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace API.Controllers
 {
@@ -56,7 +58,9 @@ namespace API.Controllers
         [HttpGet]
         public async Task<Tweet> GetTweets()
         {
-            using (var client = new HttpClient())
+            Uri baseURI = new Uri("https://api.twitter.com/1.1/search/tweets.json");
+
+            using (RestDisposable client = new RestDisposable(baseURI))
             {
                 string q = "q=moms";
 
@@ -81,19 +85,35 @@ namespace API.Controllers
                 string resource = "?" + q + geocode + lang + "&result_type=" + result_type.ToString() +
                 count + max_id + include_entities;
 
-                string url = String.Format(_base);
+                string url = String.Format(_base + resource);
                 Console.WriteLine("\nThe URI is ${url}");
 
                 TwitterAuthController authCon = new TwitterAuthController(Configuration);
+                //Consider changing this to custom Bearer Token class or Dictionary
+                Tuple<String, String> token = authCon.BearerToken(twitterUsername, twitterPassword);
 
-                client.BaseAddress = new Uri(_base);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authCon.BearerToken(twitterUsername, twitterPassword));
+                var request = new RestRequest(baseURI + resource, Method.GET);
+                //Host
+                //UserAgent
+                //Accept
+                //AcceptEncoding
+                //Connection
+                //Content-Type
+                request.AddHeader("Content-Type", "application / json");
 
-                var response = await client.GetAsync(url).ConfigureAwait(false);
+                //Authorization
+                request.AddHeader("Authorization", token.Item1 + " " + token.Item2);
 
-                if (response.IsSuccessStatusCode)
+
+
+
+                //client.DefaultRequestHeaders.Accept.Clear();
+                //client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", );
+
+                var response = client.Execute(request);
+
+                if (response.IsSuccessful)
                 {
                     //get output
 

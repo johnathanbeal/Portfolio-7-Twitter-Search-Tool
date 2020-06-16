@@ -44,7 +44,7 @@ namespace API.Controllers
             twitterPassword = ICon["Twitter:Password"];
         }
 
-        public String BearerToken(string _username, string _password)
+        public Tuple<String, String> BearerToken(string _username, string _password)
         {
             //Resource URL
             string baseURI = "https://api.twitter.com/oauth2/token";
@@ -82,12 +82,14 @@ namespace API.Controllers
             var debug = response.ResponseStatus;
             var debug2 = response.Content;
             dynamic jsonResponse = JObject.Parse(response.Content);
-            var bearerToken = jsonResponse.access_token;
-            var token_type = jsonResponse.token_type;
-                
+            String bearerToken = jsonResponse.access_token;
+            String token_type = jsonResponse.token_type;
+            bearerToken = bearerToken.Replace("{", "").Replace("}", "");
+            token_type = token_type.Replace("{", "").Replace("}", "");
 
+            Tuple<String, String> BearerToken = new Tuple<String, String>(token_type, bearerToken);
 
-            return bearerToken;
+            return BearerToken;
         }
 
         public async Task<String> WastedTime(string _username, string _password)
