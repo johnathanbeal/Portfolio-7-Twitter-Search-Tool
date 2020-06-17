@@ -127,10 +127,11 @@ namespace API.Controllers
                 //Tweet tweet = new Tweet();
                 //Status[] statuses = dynamicResponse.Statuses;
                 //Status[] statuses = dynamicResponse.Statuses;
-                
+                var JSONObj = deserial.Deserialize<Dictionary<string, string>>(response);
+                RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer();
                 var JSONObj = SimpleJson.Deserialize<Dictionary<string, string>>(response);
                 int rowCount = JSONObj["Count"];
-
+                var debug = SimpleJson.DeserializeObject<Dictionary<string, string>>(response.Content);
                 Tweet tweet = deserial.Deserialize<Tweet>(response);
 
                 if (response.IsSuccessful)
