@@ -31,6 +31,12 @@ using Microsoft.AspNetCore.Routing.Matching;
 using RestSharp;
 using API.Extensions;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Text.Json;
+using System.IO;
+using static Ikkyo.Entities.Tweet;
+using RestSharp;
+using RestSharp.Deserializers;
+using RestSharp.Deserializers;
 
 namespace API.Controllers
 {
@@ -62,7 +68,7 @@ namespace API.Controllers
 
             using (RestDisposable client = new RestDisposable(baseURI))
             {
-                string q = "q=moms";
+                string q = "q=Duck";
 
                 ResultType result_type = ResultType.popular;
 
@@ -113,13 +119,27 @@ namespace API.Controllers
 
                 var response = client.Execute(request);
 
+                //dynamic dynamicResponse = response.Content;
+
+                //string jsonString = File.ReadAllText(responseString);
+                //Tweet tweet = JsonSerializer.Deserialize<Tweet>(responseString);     
+
+                //Tweet tweet = new Tweet();
+                //Status[] statuses = dynamicResponse.Statuses;
+                //Status[] statuses = dynamicResponse.Statuses;
+                
+                var JSONObj = SimpleJson.Deserialize<Dictionary<string, string>>(response);
+                int rowCount = JSONObj["Count"];
+
+                Tweet tweet = deserial.Deserialize<Tweet>(response);
+
                 if (response.IsSuccessful)
                 {
                     //get output
 
                     //pass or process output
                 }
-                return new Tweet();
+                return tweet;
             }
         }
     }

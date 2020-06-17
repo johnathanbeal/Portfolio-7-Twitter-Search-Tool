@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.SpaServices;
 using Microsoft.AspNetCore.Routing.Matching;
 using Microsoft.VisualBasic.FileIO;
 using API.Controllers;
+using Ikkyo.Entities;
 
 namespace API
 {
@@ -46,7 +47,7 @@ namespace API
         {
             app.UseStaticFiles();
             TwitterController twitter = new TwitterController(Configuration);
-            await twitter.GetTweets();
+            Tweet troll = await twitter.GetTweets();
 
             //if (env.IsDevelopment())
             //{
