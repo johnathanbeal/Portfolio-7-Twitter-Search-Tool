@@ -132,7 +132,8 @@ namespace API.Controllers
                 //var JSONObj = SimpleJson.Deserialize<Dictionary<string, string>>(response);
                 try
                 {
-                    var JSONObj = SimpleJson.DeserializeObject<Dictionary<object, object>>(response.Content);
+                    Newtonsoft.Json.Linq.JObject responseJson = Newtonsoft.Json.Linq.JObject.Parse(response.Content);
+                    IList<Newtonsoft.Json.Linq.JToken> results = responseJson.Children().ToList();
                 }
                 catch(Exception ex)
                 {
@@ -140,8 +141,22 @@ namespace API.Controllers
                     //var JSONObj = SimpleJson.DeserializeObject<Dictionary<string, string>>(response.Content);
                 }
                 //int rowCount = JSONObj["Count"];
+                Tweet tweet = SimpleJson.DeserializeObject<Tweet>(response.Content);
+                //string text = tweet.Text;
+                //Uri UrlUrl = tweet.UrlUrl;
+                //Uri ExpandedUrl = tweet.ExpandedUrl;
+                //string displayUrl = tweet.DisplayUrl;
+                //string CreatedAt = tweet.CreatedAt;
+                //string Name = tweet.Name;
+                //string ScreenName = tweet.ScreenName;
+                //string Location = tweet.Location;
+                //string Desription = tweet.Description;
+                //Uri Url = tweet.Url;
 
-                Tweet tweet = new Tweet();
+
+
+
+                //Tweet tweet = new Tweet();
                     //deserial.Deserialize<Tweet>(response);
 
                 if (response.IsSuccessful)

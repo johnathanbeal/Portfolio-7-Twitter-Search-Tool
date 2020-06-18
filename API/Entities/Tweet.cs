@@ -13,7 +13,9 @@ namespace Ikkyo.Entities
 {
     public class Tweet
     {
-        
+        public List<Status> Statuses { get; set; }
+
+        public List<SearchMetadata> Search_Metadata { get; set; }
         public partial class Welcome
         {
             [JsonProperty("statuses")]
