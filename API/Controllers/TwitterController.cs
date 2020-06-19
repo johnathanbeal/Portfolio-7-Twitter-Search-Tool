@@ -37,6 +37,8 @@ using static Ikkyo.Entities.Tweet;
 using RestSharp;
 using RestSharp.Deserializers;
 using RestSharp.Deserializers;
+using Newtonsoft.Json.Linq;
+using API.NewtonsoftIkkyo;
 
 namespace API.Controllers
 {
@@ -88,8 +90,9 @@ namespace API.Controllers
                 string include_entities = "&include_entities=true";
 
                 string _base = "https://api.twitter.com/1.1/search/tweets.json";
-                string resource = "?" + q + geocode + lang + "&result_type=" + result_type.ToString() +
-                count + max_id + include_entities;
+                //string resource = "?" + q + geocode + lang + "&result_type=" + result_type.ToString() +
+                //count + max_id + include_entities;
+                string resource = "?" + q;
 
                 string url = String.Format(_base + resource);
                 Console.WriteLine("\nThe URI is ${url}");
@@ -99,72 +102,26 @@ namespace API.Controllers
                 Tuple<String, String> token = authCon.BearerToken(twitterUsername, twitterPassword);
 
                 var request = new RestRequest(baseURI + resource, Method.GET);
-                //Host
-                //UserAgent
-                //Accept
-                //AcceptEncoding
-                //Connection
-                //Content-Type
+                
                 request.AddHeader("Content-Type", "application / json");
 
                 //Authorization
                 request.AddHeader("Authorization", token.Item1 + " " + token.Item2);
 
-
-
-
-                //client.DefaultRequestHeaders.Accept.Clear();
-                //client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", );
-
                 var response = client.Execute(request);
 
-                //dynamic dynamicResponse = response.Content;
+                var jObject = JObject.Parse(response.Content);
 
-                //string jsonString = File.ReadAllText(responseString);
-                //Tweet tweet = JsonSerializer.Deserialize<Tweet>(responseString);     
+                Newtonsoft.Json.Linq.JToken[] statuses = jObject.GetValue("statuses").ToArray<Newtonsoft.Json.Linq.JToken>();
+                JObject status1 = (JObject)statuses[0];
+                JToken createdAt = status1["created_at"];
 
-                //Tweet tweet = new Tweet();
-                //Status[] statuses = dynamicResponse.Statuses;
-                //Status[] statuses = dynamicResponse.Statuses;
-                //var JSONObj = deserial.Deserialize<Dictionary<string, string>>(response);
-                //RestSharp.Deserializers.JsonDeserializer deserial = new JsonDeserializer();
-                //var JSONObj = SimpleJson.Deserialize<Dictionary<string, string>>(response);
-                try
-                {
-                    Newtonsoft.Json.Linq.JObject responseJson = Newtonsoft.Json.Linq.JObject.Parse(response.Content);
-                    IList<Newtonsoft.Json.Linq.JToken> results = responseJson.Children().ToList();
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    //var JSONObj = SimpleJson.DeserializeObject<Dictionary<string, string>>(response.Content);
-                }
-                //int rowCount = JSONObj["Count"];
-                Tweet tweet = SimpleJson.DeserializeObject<Tweet>(response.Content);
-                //string text = tweet.Text;
-                //Uri UrlUrl = tweet.UrlUrl;
-                //Uri ExpandedUrl = tweet.ExpandedUrl;
-                //string displayUrl = tweet.DisplayUrl;
-                //string CreatedAt = tweet.CreatedAt;
-                //string Name = tweet.Name;
-                //string ScreenName = tweet.ScreenName;
-                //string Location = tweet.Location;
-                //string Desription = tweet.Description;
-                //Uri Url = tweet.Url;
+                //JToken memberName = jObject["members"].First["name"]; EXAMPLE
 
-
-
-
-                //Tweet tweet = new Tweet();
-                    //deserial.Deserialize<Tweet>(response);
-
-                if (response.IsSuccessful)
-                {
-                    //get output
-
-                    //pass or process output
-                }
+                Newtonsoft.Json.Linq.JToken status = jObject.GetValue("statuses").ToString();
+                var values = jObject.GetValue("search_metadata").ToString();
+                 
+                Tweet tweet = new Tweet();
                 return tweet;
             }
         }
