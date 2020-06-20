@@ -109,15 +109,15 @@ namespace API.Controllers
                 request.AddHeader("Authorization", token.Item1 + " " + token.Item2);
 
                 var response = client.Execute(request);
-
+                var tweetResponse = client.Execute<Tweet>(request);
                 var jObject = JObject.Parse(response.Content);
 
                 Newtonsoft.Json.Linq.JToken[] statuses = jObject.GetValue("statuses").ToArray<Newtonsoft.Json.Linq.JToken>();
                 JObject status1 = (JObject)statuses[0];
                 JToken createdAt = status1["created_at"];
-
-                var _object = SimpleJson.DeserializeObject<Tweet>(response.Content);
-
+                string _statuses = jObject.GetValue("statuses").ToString();
+                Tweet _object = SimpleJson.DeserializeObject<Tweet>(response.Content);
+                
                 //JToken memberName = jObject["members"].First["name"]; EXAMPLE
 
                 Newtonsoft.Json.Linq.JToken status = jObject.GetValue("statuses").ToString();
