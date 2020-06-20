@@ -116,6 +116,8 @@ namespace API.Controllers
                 JObject status1 = (JObject)statuses[0];
                 JToken createdAt = status1["created_at"];
 
+                var _object = SimpleJson.DeserializeObject<Tweet>(response.Content);
+
                 //JToken memberName = jObject["members"].First["name"]; EXAMPLE
 
                 Newtonsoft.Json.Linq.JToken status = jObject.GetValue("statuses").ToString();
