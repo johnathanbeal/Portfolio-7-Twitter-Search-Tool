@@ -18,6 +18,12 @@ namespace Ikkyo.Entities
 
         }
 
+        public Tweet(List<Status> _status, SearchMetadata _searchMetadata)
+        {
+            Statuses = _status;
+            SearchMetadata = _searchMetadata;
+        }
+
         [JsonProperty("statuses")]
         public List<Status> Statuses { get; set; }
 

@@ -94,9 +94,6 @@ namespace API.Controllers
                 //count + max_id + include_entities;
                 string resource = "?" + q;
 
-                string url = String.Format(_base + resource);
-                Console.WriteLine("\nThe URI is ${url}");
-
                 TwitterAuthController authCon = new TwitterAuthController(Configuration);
                 //Consider changing this to custom Bearer Token class or Dictionary
                 Tuple<String, String> token = authCon.BearerToken(twitterUsername, twitterPassword);
@@ -105,25 +102,14 @@ namespace API.Controllers
                 
                 request.AddHeader("Content-Type", "application / json");
 
-                //Authorization
                 request.AddHeader("Authorization", token.Item1 + " " + token.Item2);
 
                 var response = client.Execute(request);
                 var tweetResponse = client.Execute<Tweet>(request);
-                var jObject = JObject.Parse(response.Content);
-
-                Newtonsoft.Json.Linq.JToken[] statuses = jObject.GetValue("statuses").ToArray<Newtonsoft.Json.Linq.JToken>();
-                JObject status1 = (JObject)statuses[0];
-                JToken createdAt = status1["created_at"];
-                string _statuses = jObject.GetValue("statuses").ToString();
-                Tweet _object = SimpleJson.DeserializeObject<Tweet>(response.Content);
+                var tweetStatusList = tweetResponse.Data.Statuses;
+                var tweetSearchMetadata = tweetResponse.Data.SearchMetadata;
+                var tweet = new Tweet(tweetStatusList, tweetSearchMetadata);
                 
-                //JToken memberName = jObject["members"].First["name"]; EXAMPLE
-
-                Newtonsoft.Json.Linq.JToken status = jObject.GetValue("statuses").ToString();
-                var values = jObject.GetValue("search_metadata").ToString();
-                 
-                Tweet tweet = new Tweet();
                 return tweet;
             }
         }

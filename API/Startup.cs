@@ -48,7 +48,7 @@ namespace API
             app.UseStaticFiles();
             TwitterController twitter = new TwitterController(Configuration);
             Tweet troll = await twitter.GetTweets();
-
+            
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();
