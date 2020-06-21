@@ -38,7 +38,7 @@ namespace API
             services.AddControllers();
             //services.AddSpaStaticFiles(SpaStaticFilesOptions =>
             //{
-            //    config.RootPath = "client/build";
+            //    Configuration.RootPath = "client/build";
             //});
         }
 
@@ -47,25 +47,25 @@ namespace API
         {
             app.UseStaticFiles();
             TwitterController twitter = new TwitterController(Configuration);
-            Tweet troll = await twitter.GetTweets();
-            
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
+            //Tweet troll = await twitter.GetTweets();
 
-            //app.UseHttpsRedirection();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-            //app.UseRouting();
+            app.UseHttpsRedirection();
 
-            //app.UseAuthorization();
+            app.UseRouting();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
+            app.UseAuthorization();
 
-            //app.UseSpa(configuration spa =>
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            //app.UseSpa(Configuration spa =>
             //{
             //    spa.Options.SourcePath = "client";
             //    if (env.IsDevelopment())

@@ -63,14 +63,14 @@ namespace API.Controllers
             authInfo = new AuthInfo(twitterUsername, twitterPassword);
         }
 
-        [HttpGet]
-        public async Task<Tweet> GetTweets()
+        [HttpGet("{searchText}")]
+        public async Task<Tweet> GetTweets(string searchText)
         {
             Uri baseURI = new Uri("https://api.twitter.com/1.1/search/tweets.json");
 
             using (RestDisposable client = new RestDisposable(baseURI))
             {
-                string q = "q=Trump";
+                string q = "q=" + searchText;
 
                 ResultType result_type = ResultType.popular;
 
