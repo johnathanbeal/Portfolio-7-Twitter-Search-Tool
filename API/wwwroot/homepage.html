@@ -11,7 +11,7 @@
         <label for="search">Search</label>
         <input type="text" id="search" name="search" />
         <br />
-        <button onclick="var debug = TryFetch()" id="submit" type="submit" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;" >Submit</button>
+        <button onclick="TryFetch(document.getElementById('search').value)" id="submit" type="button" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;" >Submit</button>
     </form>
     <table>
         <thead>
