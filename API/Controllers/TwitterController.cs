@@ -1,10 +1,10 @@
 ﻿using System;
 
 using System.Threading.Tasks;
-using Ikkyo.Entities;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Ikkyo.Enums;
+using Domain.Enums;
 using API.AuthorizationInfo;
 using RestSharp;
 using API.Extensions;
