@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BFD442RfJoZLugsUO7Pd6NYDcfJ9Sqwo6hG2WjP2kUW/lfa+feaxqhplkA0p/+1yIHzW+Kr0UQNj4mwlpgMx8Q==",
+  "dgSpecHash": "bL2DGgTSxMoKJnf1tILqx02v28rNDG2pnHo7vQGSoH9KyDERc6K3QEyujYe5IMGQbQ68BbJahJVJgSfo95eSrA==",
   "success": true,
   "projectFilePath": "C:\\Github\\Ikkyo\\Ikkyo\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\jbeal\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\jbeal\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\jbeal\\.nuget\\packages\\restsharp\\106.11.4\\restsharp.106.11.4.nupkg.sha512"
   ],
   "logs": []
 }

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Domain.Enums;
 using API.AuthorizationInfo;
 using RestSharp;
-using API.Extensions;
+using Domain.Extensions;
 
 namespace API.Controllers
 {

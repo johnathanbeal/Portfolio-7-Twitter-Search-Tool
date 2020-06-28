@@ -1,12 +1,9 @@
-﻿using Domain.Enums;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Security.Policy;
-using System.Threading.Tasks;
+using Domain.Entities;
+using Domain.Enums;
 
-namespace Ikkyo.Model
+namespace Domain.Models
 {
     public class SearchViewModel
     {
@@ -19,17 +16,17 @@ namespace Ikkyo.Model
 
         public string locale { get; set; }
 
-        public ResultType result_type {get; set; }
+        public ResultType result_type { get; set; }
 
         private string _until;
-        public DateTime until 
-        { 
+        public DateTime until
+        {
             get
             {
                 IFormatProvider culture = new CultureInfo("en-US", true);
                 return DateTime.ParseExact(this._until, "YYYY-MM-DD", culture);
             }
-                           
+
             set
             {
                 this._until = value.ToString();

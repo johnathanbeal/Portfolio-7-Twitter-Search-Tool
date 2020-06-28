@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/{_username}/{_password}")]
     [ApiController]
     public class TwitterAuthController : ControllerBase
     {

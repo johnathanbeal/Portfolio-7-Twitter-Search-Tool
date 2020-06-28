@@ -72,8 +72,6 @@ C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.C
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Domain.dll
-C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Understructure.dll
-C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Understructure.pdb
 C:\Github\Ikkyo\Ikkyo\API\bin\Debug\netcoreapp3.1\Domain.pdb
 C:\Github\Ikkyo\Ikkyo\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
 C:\Github\Ikkyo\Ikkyo\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
