@@ -1,12 +1,5 @@
 ﻿using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 

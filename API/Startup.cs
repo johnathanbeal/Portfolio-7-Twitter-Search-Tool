@@ -20,8 +20,6 @@ namespace API
 {
     public class Startup
     {
-        //public AuthInfo.AuthInfo TwitterTokenAuthInfo;
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,25 +27,16 @@ namespace API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            
-
-            //TwitterTokenAuthInfo = new AuthInfo.AuthInfo(twitterUsername, twitterPassword);
-            services.AddControllers();
-            //services.AddSpaStaticFiles(SpaStaticFilesOptions =>
-            //{
-            //    Configuration.RootPath = "client/build";
-            //});
+        {            
+            services.AddControllers();            
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();
             TwitterController twitter = new TwitterController(Configuration);
-            //Tweet troll = await twitter.GetTweets();
+           
 
             if (env.IsDevelopment())
             {
@@ -65,14 +54,6 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            //app.UseSpa(Configuration spa =>
-            //{
-            //    spa.Options.SourcePath = "client";
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseSomethingElse(start)
-            //    }
-            //})
         }
     }
 }

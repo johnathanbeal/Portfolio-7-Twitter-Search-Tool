@@ -5,33 +5,17 @@
     <title>Ikkyo => The Twitter Search App</title>
 </head>
 <body>
-    <h1>SEARCH FOR TWEETS!!!</h1>
-    <p>Under Construction</p>
+    <h1>IKKYO</h1>
+    <p>Search Twitter</p>
     <form>
         <label for="search">Search</label>
         <input type="text" id="search" name="search" />
         <br />
         <button onclick="TryFetch(document.getElementById('search').value)" id="submit" type="button" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;" >Submit</button>
     </form>
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>screen name</th>
-                <th>text</th>
-            </tr>
-        </thead>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+    <div id="display-tweets">
+        <p>Display Tweets Here</p>
+    </div>
     <script src="/js/twitterSearchApi.js"></script>
 </body>
 </html>

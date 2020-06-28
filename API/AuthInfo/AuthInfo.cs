@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace API.AuthorizationInfo
 {
 	public class AuthInfo

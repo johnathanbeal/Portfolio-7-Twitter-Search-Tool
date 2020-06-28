@@ -9,18 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Understructure", "Understru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6C8DEEDB-A67A-4E0F-936F-3E8E857F1543}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wwwroot", "wwwroot", "{9301B73A-5500-42EB-A5C7-DDF1780058B0}"
-	ProjectSection(SolutionItems) = preProject
-		homepage.html = homepage.html
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sue_Dough", "Sue_Dough", "{E423CF1E-C192-46ED-AF8F-43DDE9087921}"
-	ProjectSection(SolutionItems) = preProject
-		Pseudo.cs = Pseudo.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{F6ECCF5C-760C-4B16-A251-561F977FA7A8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
