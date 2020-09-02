@@ -1,13 +1,11 @@
 ﻿using System;
-
 using System.Threading.Tasks;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Domain.Enums;
-using API.AuthorizationInfo;
 using RestSharp;
-using Domain.Extensions;
+using Domain.Interface;
 
 namespace API.Controllers
 {
@@ -15,72 +13,71 @@ namespace API.Controllers
     [ApiController]
     public class TwitterController : ControllerBase
     {
+
         public string SearchString { get; set; }
 
-        private string twitterUsername;
-        private string twitterPassword;
+        private readonly ITwitterService _twitterService;
 
-        public IConfiguration Configuration { get; }
-
-        private readonly AuthInfo authInfo;
-
-        public TwitterController(IConfiguration configuration)
-        {
-            Configuration = configuration;
-            twitterUsername = Configuration["Twitter:Username"];
-            twitterPassword = Configuration["Twitter:Password"];
-            authInfo = new AuthInfo(twitterUsername, twitterPassword);
+        public TwitterController(IConfiguration configuration, ITwitterService twitterService)
+        {          
+            _twitterService = twitterService;
         }
 
         [HttpGet()]
         public async Task<Tweet> GetTweets(string searchText)
         {
-            Uri baseURI = new Uri("https://api.twitter.com/1.1/search/tweets.json");
+            var baseUri = new Uri("https://api.twitter.com/1.1/search/tweets.json");
 
-            using (RestDisposable client = new RestDisposable(baseURI))
-            {
-                string q = "q=" + searchText;
+            var client = new RestClient(baseUri);
 
-                ResultType result_type = ResultType.popular;
+            var request = new RestRequest(baseUri, Method.GET);
 
-                string lang = "&lang=English";
+            request.AddParameter("q", searchText, ParameterType.QueryString);
 
-                string latitude = "39.035147";
-                string longitude = "-77.503127";
-                string radius = "3000";
-                string geocode = "&geocode=" + latitude + "," + longitude + "," + radius;
+            request.AddHeader("Content-Type", "application / json");
 
-                string count = "&count=99";
+            request.AddHeader("Authorization", "Bearer " + _twitterService.GetBearerToken());
 
-                int since_id = 99999;
+            return client.Execute<Tweet>(request).Data;
 
-                string max_id = "";//"&max_id=100";
 
-                string include_entities = "&include_entities=true";
+            //using (RestDisposable client = new RestDisposable(baseUri, Method.GET))
+            //{
+            //    string q = "q=" + searchText;
 
-                string _base = "https://api.twitter.com/1.1/search/tweets.json";
-                //string resource = "?" + q + geocode + lang + "&result_type=" + result_type.ToString() +
-                //count + max_id + include_entities;
-                string resource = "?" + q;
+            //    ResultType result_type = ResultType.popular;
 
-                TwitterAuthController authCon = new TwitterAuthController(Configuration);
-                //Consider changing this to custom Bearer Token class or Dictionary
-                Tuple<String, String> token = authCon.BearerToken(twitterUsername, twitterPassword);
+            //    string lang = "&lang=English";
 
-                var request = new RestRequest(baseURI + resource, Method.GET);
+            //    string latitude = "39.035147";
+            //    string longitude = "-77.503127";
+            //    string radius = "3000";
+            //    string geocode = "&geocode=" + latitude + "," + longitude + "," + radius;
+
+            //    string count = "&count=99";
+
+            //    int since_id = 99999;
+
+            //    string max_id = "";//"&max_id=100";
+
+            //    string include_entities = "&include_entities=true";
+
+            //    string _base = "https://api.twitter.com/1.1/search/tweets.json";
                 
-                request.AddHeader("Content-Type", "application / json");
+            //    string resource = "?" + q;
 
-                request.AddHeader("Authorization", token.Item1 + " " + token.Item2);
-
-                var response = client.Execute(request);
-                var tweetResponse = client.Execute<Tweet>(request);
-                var tweetStatusList = tweetResponse.Data.Statuses;
-                var tweetSearchMetadata = tweetResponse.Data.SearchMetadata;
-                var tweet = new Tweet(tweetStatusList, tweetSearchMetadata);
+            //    var request = new RestRequest(baseURI + resource, Method.GET);
                 
-                return tweet;
-            }
+                
+
+            //    var response = client.Execute(request);
+            //    var tweetResponse = client.Execute<Tweet>(request);
+            //    var tweetStatusList = tweetResponse.Data.Statuses;
+            //    var tweetSearchMetadata = tweetResponse.Data.SearchMetadata;
+            //    var tweet = new Tweet(tweetStatusList, tweetSearchMetadata);
+                
+            //    return tweet;
+            //}
         }
 
     }

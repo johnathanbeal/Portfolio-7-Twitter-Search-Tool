@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using API.Controllers;
+using Domain.Integration;
+using Domain.Interface;
 
 namespace API
 {
@@ -18,14 +20,13 @@ namespace API
 
         public void ConfigureServices(IServiceCollection services)
         {            
-            services.AddControllers();            
+            services.AddControllers();
+            services.AddScoped<ITwitterService, TwitterService>();
         }
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseStaticFiles();
-            TwitterController twitter = new TwitterController(Configuration);
-           
+            app.UseStaticFiles();           
 
             if (env.IsDevelopment())
             {
