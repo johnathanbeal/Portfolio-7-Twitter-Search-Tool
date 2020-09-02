@@ -1,8 +1,16 @@
-# Portfolio-7-Twitter-Search-Tool
+# Ikkyo the Twitter-Search-Tool
 
-![Image of Tweet](https://static.boredpanda.com/blog/wp-content/uploads/2016/11/funny-celebrity-parenting-tweets-fb3.png)
+This is a tool you can use to search for tweets, written using ASP.NET Core and Fetch.js
 
-## Search for great tweets like this one!
+![Application Screenshot](Ikkyo.PNG)
+
+# Summary
+This project showcases my ability to consume and write APIs for use in a practical application.
+
+# Developer
+Johnathan Beal - [Linkedin](https://www.linkedin.com/in/johnathan-beal-961494197/)
+
+# Setup Steps
 
 1. Clone this repository to a folder on your computer.
 2. Open this project with a tool such as Visual Studio or Rider.
