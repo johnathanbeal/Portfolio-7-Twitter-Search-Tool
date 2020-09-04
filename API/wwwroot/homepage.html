@@ -11,11 +11,10 @@
         <label for="search">Search</label>
         <input type="text" id="search" name="search" />
         <br />
-        <button onclick="TryFetch(document.getElementById('search').value)" id="submit" type="button" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;" >Submit</button>
+        <button onclick="TryFetch(document.getElementById('search').value)" id="submit" type="button" value="Submit" style="width: 200px; height: 30px; margin-top: 10px;">Submit</button>
     </form>
-    <div id="display-tweets">
-        <p>Display Tweets Here</p>
-    </div>
+    <div id="display-screen-name"></div>
+    <div id="display-tweet-text"></div>
     <script src="/js/twitterSearchApi.js"></script>
 </body>
 </html>

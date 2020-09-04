@@ -2,7 +2,8 @@
 async function TryFetch(search) {
     let url = "api/tweets/";
 
-    let displayTweets = document.querySelector("#display-tweets");
+    let displayTweets = document.querySelector("#display-tweet-text");
+    let displayScreenName = document.querySelector("#display-screen-name");
 
     url = url + search.replace(" ","%20");
     console.log("start");
@@ -21,6 +22,11 @@ async function TryFetch(search) {
                         "<tr><td>" +
                         ordinal + ": " + result.statuses[i].text +
                             "</td></tr>";
+
+                        //let name +=
+                        //"<tr><td>" +
+                        //    result.statuses[i]
+
                         ordinal++;
                 }
                 output += "</tbody></table>";
