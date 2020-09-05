@@ -32,56 +32,15 @@ namespace API.Controllers
 
             var request = new RestRequest(baseUri, Method.GET);
 
-            request.AddParameter("?q=", searchText, ParameterType.QueryString);
+            request.AddParameter("q", searchText, ParameterType.QueryString);
 
-            request.AddHeader("Content-Type", "application / json");
+            request.AddHeader("Content-Type", "application/json");
 
             request.AddHeader("Authorization", "Bearer " + _twitterService.GetBearerToken());
 
-            //var response = client.Execute(request);
-            //var tweetResponse = client.Execute<Tweet>(request);
-            //var tweetStatusList = tweetResponse.Data.Statuses;
-            //var tweetSearchMetadata = tweetResponse.Data.SearchMetadata;
-            //var tweet = new Tweet(tweetStatusList, tweetSearchMetadata);
-            //return tweet;
-            return client.Execute<Tweet>(request).Data;
-
-
-            //using (RestDisposable client = new RestDisposable(baseUri, Method.GET))
-            //{
-            //    string q = "q=" + searchText;
-
-            //    ResultType result_type = ResultType.popular;
-
-            //    string lang = "&lang=English";
-
-            //    string latitude = "39.035147";
-            //    string longitude = "-77.503127";
-            //    string radius = "3000";
-            //    string geocode = "&geocode=" + latitude + "," + longitude + "," + radius;
-
-            //    string count = "&count=99";
-
-            //    int since_id = 99999;
-
-            //    string max_id = "";//"&max_id=100";
-
-            //    string include_entities = "&include_entities=true";
-
-            //    string _base = "https://api.twitter.com/1.1/search/tweets.json";
-
-            //    string resource = "?" + q;
-
-            //    var request = new RestRequest(baseUri + resource, Method.GET);
-
-            //    var response = client.Execute(request);
-            //    var tweetResponse = client.Execute<Tweet>(request);
-            //    var tweetStatusList = tweetResponse.Data.Statuses;
-            //    var tweetSearchMetadata = tweetResponse.Data.SearchMetadata;
-            //    var tweet = new Tweet(tweetStatusList, tweetSearchMetadata);
-
-            //    return tweet;
-            //}
+            var tweet = client.Execute<Tweet>(request).Data;
+            
+            return tweet;
         }
 
     }
