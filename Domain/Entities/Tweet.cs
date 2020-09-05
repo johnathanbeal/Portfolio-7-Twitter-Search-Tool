@@ -107,7 +107,7 @@ namespace Domain.Entities
         public Metadata InReplyToScreenName { get; set; }
 
         [JsonProperty("user")]
-        public string User { get; set; }
+        public User User { get; set; }
 
         [JsonProperty("geo")]
         public string Geo { get; set; }
