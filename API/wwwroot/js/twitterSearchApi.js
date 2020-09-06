@@ -14,7 +14,7 @@ async function TryFetch(search) {
                 })
                 .then(function (result) {
                 let output =
-                        "<table><thead><tr><th>Tweets</th><thead><tbody>";
+                        "<table><thead><tr><th>Tweets</th><thead><tbody><tr><b><td>Pic</td><td>Screen Name</td><td>Name</td><td>Location</td><td>Tweet</td></b></tr>";
                     var ordinal = 1;
                     for (let i in result.statuses) {
                         console.log("loopcount " + ordinal);
@@ -24,10 +24,10 @@ async function TryFetch(search) {
                         //console.log(result.statuses[i].user.profile_image_url);
                         output +=
                             "<tr><td><img src=\"" + result.statuses[i].user.profileImageUrl + "\"></img ></td>" +
-                            "<td><div style=\"color: blue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +
-                            "<td><div>From " + result.statuses[i].user.location + "</div></td>" +
-                            "<td><div style=\"color: orange\"> Name: " + result.statuses[i].user.name + "</div></td>" +
-                            "<td><div><p style=\"color: green\"> Tweeted ~" + result.statuses[i].text + "</div></td></tr>";
+                            "<td><div style=\"color: CornflowerBlue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +
+                            "<td><div style=\"color: Coral\">" + result.statuses[i].user.name + "</div></td>" +
+                            "<td><div style=\"color: DarkKhaki\">" + result.statuses[i].user.location + "</div></td>" +
+                            "<td><div>" + result.statuses[i].text + "</div></td></tr>";
                         console.log(output);
                         ordinal++;
                 }
