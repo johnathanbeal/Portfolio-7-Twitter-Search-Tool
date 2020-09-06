@@ -17,18 +17,18 @@ async function TryFetch(search) {
                         "<table><thead><tr><th>Tweets</th><thead><tbody>";
                     var ordinal = 1;
                     for (let i in result.statuses) {
-
-                        output +=  
-                            "<tr><td><img src=result.statuses[i].entities.media[0].media_url></img >" +
-                            "</td><td><img src=result.statuses[i].entities.media[1].media_url></img >" +
-                            "</td><td><img src=result.statuses[i].entities.media[i].media_url></img >" +
-                            "</td><td><img src=result.statuses[i].entities.media.media_url></img ></td><td>" +
-                            "<div style=\"color: blue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +
-                            "<div>From " + result.statuses[i].user.location + "</div>" +
-                            "<div style=\"color: orange\"> Name: " + result.statuses[i].user.name +
-                            "</div><div><p style=\"color: green\"> Tweeted ~" + result.statuses[i].text +
-                            "</div></td></tr>";
-
+                        console.log("loopcount " + ordinal);
+                        console.log(result.statuses[i]);
+                        console.log(result.statuses[i].user);
+                        console.log(result.statuses[i].user.profileImageUrl);
+                        //console.log(result.statuses[i].user.profile_image_url);
+                        output +=
+                            "<tr><td><img src=\"" + result.statuses[i].user.profileImageUrl + "\"></img ></td>" +
+                            "<td><div style=\"color: blue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +
+                            "<td><div>From " + result.statuses[i].user.location + "</div></td>" +
+                            "<td><div style=\"color: orange\"> Name: " + result.statuses[i].user.name + "</div></td>" +
+                            "<td><div><p style=\"color: green\"> Tweeted ~" + result.statuses[i].text + "</div></td></tr>";
+                        console.log(output);
                         ordinal++;
                 }
                 output += "</tbody></table>";

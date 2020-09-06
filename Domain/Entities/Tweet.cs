@@ -422,8 +422,8 @@ namespace Domain.Entities
         //[JsonProperty("profile_background_tile")]
         //public string profile_background_tile { get; set; }
 
-        //[JsonProperty("profile_image_url")]
-        //public string profile_image_url { get; set; }
+        [JsonProperty("profile_image_url")]
+        public string ProfileImageUrl { get; set; }
 
         //[JsonProperty("profile_image_url_https")]
         //public string profile_image_url_https { get; set; }
