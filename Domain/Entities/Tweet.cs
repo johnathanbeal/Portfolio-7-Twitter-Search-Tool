@@ -64,8 +64,8 @@ namespace Domain.Entities
     {
         public Status()
         {
-            User = new User();
-            Entities = new Entities();
+            //User = new User();
+            //Entities = new Entities();
         }
 
         //[JsonProperty("created_at")]
@@ -180,7 +180,9 @@ namespace Domain.Entities
     {
         public Entities()
         {
-            Media = new List<Media>();
+            //Media = new List<Media>();
+            Media = new List<Medium>();
+            
         }
         ///// <summary>
         ///// 
@@ -204,62 +206,87 @@ namespace Domain.Entities
         //public List<string> urls { get; set; }
 
         [JsonProperty("media")]
-        public List<Media> Media { get; set; }
+        public List<Medium> Media { get; set; }
     }
 
-    public class Media
+    public class Medium
     {
-        //[JsonProperty("id")]
-        //public string Id { get; set; }
-
-        //[JsonProperty("id_str")]
-        //public string IdString { get; set; }
-                        
-        //[JsonProperty("indices")]
-        //public List<int> Indices { get; set; }
+        public Medium()
+        {
+          
+        }
+        //public long id { get; set; }
+        //public string id_str { get; set; }
+        //public List<int> indices { get; set; }
 
         [JsonProperty("media_url")]
-        public Uri MediaUrl { get; set; }
+        public string media_url { get; set; }
 
-        [JsonProperty("media_url_https")]
-        public Uri MediaUrlHttps { get; set; }
-
-        //[JsonProperty("url")]
-        //public Uri Url { get; set; }
-
-        [JsonProperty("display_url")]
-        public Uri DisplayUrl { get; set; }
-
-        [JsonProperty("expanded_url")]
-        public Uri ExpandedUrl { get; set; }
-
-        [JsonProperty("type")]
-        public string Type { get; set; }
-
-
-        //"sizes": {
-        //    "thumb": {
-        //        "w": 150,
-        //        "h": 150,
-        //        "resize": "crop"
-        //    },
-        //    "large": {
-        //        "w": 343,
-        //        "h": 420,
-        //        "resize": "fit"
-        //    },
-        //    "small": {
-        //        "w": 343,
-        //        "h": 420,
-        //        "resize": "fit"
-        //    },
-        //    "medium": {
-        //        "w": 343,
-        //        "h": 420,
-        //        "resize": "fit"
-        //    }
-        //}
+        //public string media_url_https { get; set; }
+        //public string url { get; set; }
+        //public string display_url { get; set; }
+        //public string expanded_url { get; set; }
+        //public string type { get; set; }
+        ////public Sizes sizes { get; set; }
+        //public long source_status_id { get; set; }
+        //public string source_status_id_str { get; set; }
+        //public long source_user_id { get; set; }
+        //public string source_user_id_str { get; set; }
     }
+
+    //public class Media
+    //{
+    //    //[JsonProperty("id")]
+    //    //public string Id { get; set; }
+
+    //    //[JsonProperty("id_str")]
+    //    //public string IdString { get; set; }
+                        
+    //    //[JsonProperty("indices")]
+    //    //public List<int> Indices { get; set; }
+
+    //    [JsonProperty("media_url")]
+    //    public Uri MediaUrl { get; set; }
+
+    //    //[JsonProperty("media_url_https")]
+    //    //public Uri MediaUrlHttps { get; set; }
+
+    //    //[JsonProperty("url")]
+    //    //public Uri Url { get; set; }
+
+    //    //[JsonProperty("display_url")]
+    //    //public Uri DisplayUrl { get; set; }
+
+    //    //[JsonProperty("expanded_url")]
+    //    //public Uri ExpandedUrl { get; set; }
+
+    //    //[JsonProperty("type")]
+    //    //public string Type { get; set; }
+
+
+    //    //"sizes": {
+    //    //    "thumb": {
+    //    //        "w": 150,
+    //    //        "h": 150,
+    //    //        "resize": "crop"
+    //    //    },
+    //    //    "large": {
+    //    //        "w": 343,
+    //    //        "h": 420,
+    //    //        "resize": "fit"
+    //    //    },
+    //    //    "small": {
+    //    //        "w": 343,
+    //    //        "h": 420,
+    //    //        "resize": "fit"
+    //    //    },
+    //    //    "medium": {
+    //    //        "w": 343,
+    //    //        "h": 420,
+    //    //        "resize": "fit"
+    //    //    }
+    //    //}
+    //}
 
     //public class Metadata
     //{

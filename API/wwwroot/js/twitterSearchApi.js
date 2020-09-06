@@ -20,6 +20,9 @@ async function TryFetch(search) {
 
                         output +=  
                             "<tr><td><img src=result.statuses[i].entities.media[0].media_url></img >" +
+                            "</td><td><img src=result.statuses[i].entities.media[1].media_url></img >" +
+                            "</td><td><img src=result.statuses[i].entities.media[i].media_url></img >" +
+                            "</td><td><img src=result.statuses[i].entities.media.media_url></img ></td><td>" +
                             "<div style=\"color: blue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +
                             "<div>From " + result.statuses[i].user.location + "</div>" +
                             "<div style=\"color: orange\"> Name: " + result.statuses[i].user.name +
