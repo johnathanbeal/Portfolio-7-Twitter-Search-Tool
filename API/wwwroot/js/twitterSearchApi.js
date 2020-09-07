@@ -3,7 +3,6 @@ async function TryFetch(search) {
     let url = "api/tweets/";
 
     let displayTweets = document.querySelector("#display-tweet-text");
-    //let displayScreenName = document.querySelector("#display-screen-name");
 
     url = url + search.replace(" ","%20");
     console.log("start");
@@ -21,7 +20,6 @@ async function TryFetch(search) {
                         console.log(result.statuses[i]);
                         console.log(result.statuses[i].user);
                         console.log(result.statuses[i].user.profileImageUrl);
-                        //console.log(result.statuses[i].user.profile_image_url);
                         output +=
                             "<tr><td><img src=\"" + result.statuses[i].user.profileImageUrl + "\"></img ></td>" +
                             "<td><div style=\"color: CornflowerBlue\">" + ordinal + ": Screen Name: " + result.statuses[i].user.screen_name + "</div>" +

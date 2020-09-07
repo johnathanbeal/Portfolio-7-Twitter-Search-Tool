@@ -34,6 +34,8 @@ namespace API.Controllers
 
             request.AddParameter("q", searchText, ParameterType.QueryString);
 
+            request.AddParameter("lang", "en", ParameterType.QueryString);
+
             request.AddHeader("Content-Type", "application/json");
 
             request.AddHeader("Authorization", "Bearer " + _twitterService.GetBearerToken());
